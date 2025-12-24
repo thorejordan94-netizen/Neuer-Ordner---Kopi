@@ -1,0 +1,16 @@
+{
+  "name": "project-rail-tabs",
+  "version": "0.1.0",
+  "description": "Intelligent tab organization with persistent vertical project rail",
+  "scripts": {
+    "build": "node build.js",
+    "watch": "node build.js --watch",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.268",
+    "esbuild": "^0.20.0",
+    "typescript": "^5.3.3"
+  },
+  "type": "module"
+}

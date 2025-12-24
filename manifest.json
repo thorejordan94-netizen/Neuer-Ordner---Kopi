@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Project Rail Tabs",
+  "version": "0.1.0",
+  "description": "Intelligent tab organization with persistent vertical project rail",
+  "permissions": [
+    "tabs",
+    "storage",
+    "scripting",
+    "activeTab",
+    "alarms",
+    "tabGroups"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "dist/sw.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["dist/content.js"],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ],
+  "action": {
+    "default_title": "Project Rail"
+  },
+  "icons": {
+    "16": "icons/icon16.svg",
+    "48": "icons/icon48.svg",
+    "128": "icons/icon128.svg"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["dist/rail.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
